@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'profile.dart';
+import 'nxt.dart';
 
 class SwiggyHomePage extends StatefulWidget {
   const SwiggyHomePage({super.key});
@@ -271,128 +272,137 @@ class _SwiggyHomePageState extends State<SwiggyHomePage> {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
-            Container(
-              height: 180,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Image.asset(
-                      'assets/cheti.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 90),
-                    child: Icon(
-                      Icons.favorite_border_outlined,
-                      size: 25.0,
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Text(
-                                '  Karunas Chettinadu..',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                              PopupMenuButton<int>(
-                                itemBuilder: (context) => [
-                                  PopupMenuItem<int>(
-                                    value: 1,
-                                    child: Text('hiiii'),
-                                  ),
-                                  PopupMenuItem<int>(
-                                    value: 2,
-                                    child: Text('Menu Item 2'),
-                                  ),
-                                  PopupMenuItem<int>(
-                                    value: 3,
-                                    child: Text('Menu Item 3'),
-                                  ),
-                                ],
-                                onSelected: (value) {},
-                                child: IconButton(
-                                  icon: Icon(Icons.more_vert),
-                                  onPressed: () {},
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+            GestureDetector(
+              child: Container(
+                height: 180,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Image.asset(
+                        'assets/cheti.jpg',
+                        fit: BoxFit.cover,
                       ),
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 70),
-                                child: Icon(
-                                  Icons.star_border_outlined,
-                                  color: Colors.green,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 90),
+                      child: Icon(
+                        Icons.favorite_border_outlined,
+                        size: 25.0,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Text(
+                                  '  Karunas Chettinadu..',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(bottom: 0, right: 70),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      '4.0 (1K+) . 18 mins',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
+                                PopupMenuButton<int>(
+                                  itemBuilder: (context) => [
+                                    PopupMenuItem<int>(
+                                      value: 1,
+                                      child: Text('hiiii'),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 10),
-                                      child: Text(
-                                        '     Chinese, North Indian,South...\n     Meenakshipuram 3.0 km',
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                        ),
-                                      ),
+                                    PopupMenuItem<int>(
+                                      value: 2,
+                                      child: Text('Menu Item 2'),
+                                    ),
+                                    PopupMenuItem<int>(
+                                      value: 3,
+                                      child: Text('Menu Item 3'),
                                     ),
                                   ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 70),
-                                child: OutlinedButton.icon(
-                                  onPressed: () {
-                                    // Respond to button press
-                                  },
-                                  icon: Icon(
-                                    Icons.directions_bike_sharp,
-                                    size: 18,
-                                    color: Color.fromARGB(255, 175, 3, 244),
-                                  ),
-                                  label: Text(
-                                    "FREE DELIVERY",
-                                    style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 175, 3, 244)),
+                                  onSelected: (value) {},
+                                  child: IconButton(
+                                    icon: Icon(Icons.more_vert),
+                                    onPressed: () {},
                                   ),
                                 ),
-                              )
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 70),
+                                  child: Icon(
+                                    Icons.star_border_outlined,
+                                    color: Colors.green,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 0, right: 70),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        '4.0 (1K+) . 18 mins',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Text(
+                                          '     Chinese, North Indian,South...\n     Meenakshipuram 3.0 km',
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 70),
+                                  child: OutlinedButton.icon(
+                                    onPressed: () {
+                                      // Respond to button press
+                                    },
+                                    icon: Icon(
+                                      Icons.directions_bike_sharp,
+                                      size: 18,
+                                      color: Color.fromARGB(255, 175, 3, 244),
+                                    ),
+                                    label: Text(
+                                      "FREE DELIVERY",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 175, 3, 244)),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NewPage()),
+                );
+              },
             ),
             Container(
               height: 180,

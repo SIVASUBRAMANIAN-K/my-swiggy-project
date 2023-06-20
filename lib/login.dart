@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-// ignore: unused_import, library_prefixes
-import 'package:siva/profile.dart' as Profile;
+
 import 'package:siva/signin.dart';
 // ignore: unused_import
 import 'home.dart';
@@ -28,17 +27,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-
-  void _submit() {
-    String username = _usernameController.text;
-    String password = _passwordController.text;
-    if (username.isEmpty || password.isEmpty) {
-      // Show an error message or perform other actions
-      return;
-    }
-  }
+  final _formKey = GlobalKey<FormState>();
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   bool _isVisible = false;
   bool _isPasswordEightCharacters = false;
@@ -59,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -71,35 +62,54 @@ class _LoginPageState extends State<LoginPage> {
                 // <-- SEE HERE
                 'https://1000logos.net/wp-content/uploads/2021/05/Swiggy-emblem.png',
               ),
-              TextField(
-                controller: _usernameController,
-                decoration: InputDecoration(
-                  labelText: 'Username',
-                ),
-              ),
-              const SizedBox(height: 16.0),
-              TextField(
-                onChanged: (password) => onPasswordChanged(password),
-                controller: _passwordController,
-                obscureText: !_isVisible,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        _isVisible = !_isVisible;
-                      });
-                    },
-                    icon: _isVisible
-                        ? Icon(
-                            Icons.visibility,
-                            color: Colors.black,
-                          )
-                        : Icon(
-                            Icons.visibility_off,
-                            color: Colors.grey,
-                          ),
-                  ),
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      controller: _usernameController,
+                      decoration: InputDecoration(
+                        labelText: 'Username',
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your username.';
+                        }
+                        return null; // Validation passed
+                      },
+                    ),
+                    const SizedBox(height: 16.0),
+                    TextFormField(
+                      onChanged: (password) => onPasswordChanged(password),
+                      controller: _passwordController,
+                      obscureText: !_isVisible,
+                      decoration: InputDecoration(
+                        labelText: 'Password',
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              _isVisible = !_isVisible;
+                            });
+                          },
+                          icon: _isVisible
+                              ? Icon(
+                                  Icons.visibility,
+                                  color: Colors.black,
+                                )
+                              : Icon(
+                                  Icons.visibility_off,
+                                  color: Colors.grey,
+                                ),
+                        ),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password.';
+                        }
+                        return null; // Validation passed
+                      },
+                    ),
+                  ],
                 ),
               ),
               SizedBox(
@@ -167,17 +177,27 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20),
+                padding: EdgeInsets.only(top: 20),
                 child: SizedBox(
                   height: 50.0,
                   width: 800,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SwiggyHomePage()),
-                      ); //signup screen
+                      if (_formKey.currentState!.validate()) {
+                        final username = _usernameController.text;
+                        final password = _passwordController.text;
+                        if (username == 'admin' && password == 'password123') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SwiggyHomePage(),
+                            ),
+                          );
+                        }
+
+                        // Perform authentication logic here
+                        // ...
+                      } //signup screen
                     },
                     child: Text(
                       'Login',
@@ -190,17 +210,16 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 // ignore: sort_child_properties_last
                 children: [
-                  const Text('Does not have account?'),
+                  Text('Does not have account?'),
                   TextButton(
-                    child: const Text(
+                    child: Text(
                       'Sign in',
                       style: TextStyle(fontSize: 20),
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignApp()),
+                        MaterialPageRoute(builder: (context) => SignApp()),
                       ); //signup screen
                     },
                   ),
