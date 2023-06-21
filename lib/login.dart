@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:siva/signin.dart';
 // ignore: unused_import
 import 'home.dart';
+import 'list.dart';
 
 class LoginApp extends StatelessWidget {
   const LoginApp({super.key});
@@ -31,21 +32,6 @@ class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  bool _isVisible = false;
-  bool _isPasswordEightCharacters = false;
-  bool _hasPasswordOneNumber = false;
-  onPasswordChanged(String password) {
-    final numericRegex = RegExp(r'[0-9]');
-
-    setState(() {
-      _isPasswordEightCharacters = false;
-      if (password.length >= 8) _isPasswordEightCharacters = true;
-
-      _hasPasswordOneNumber = false;
-      if (numericRegex.hasMatch(password)) _hasPasswordOneNumber = true;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,164 +52,92 @@ class _LoginPageState extends State<LoginPage> {
                 key: _formKey,
                 child: Column(
                   children: [
-                    TextFormField(
-                      controller: _usernameController,
-                      decoration: InputDecoration(
+                    Padding(
+                      padding: const EdgeInsets.only(top: 40),
+                      child: txtfld(
+                        controller: _usernameController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your username.';
+                          }
+                          return null; // Validation passed
+                        },
                         labelText: 'Username',
+                        obscureText: false,
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your username.';
-                        }
-                        return null; // Validation passed
-                      },
                     ),
-                    const SizedBox(height: 16.0),
-                    TextFormField(
-                      onChanged: (password) => onPasswordChanged(password),
-                      controller: _passwordController,
-                      obscureText: !_isVisible,
-                      decoration: InputDecoration(
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: txtfld(
+                        controller: _passwordController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password.';
+                          }
+                          return null; // Validation passed
+                        },
                         labelText: 'Password',
-                        suffixIcon: IconButton(
+                        obscureText: true,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 50),
+                      child: SizedBox(
+                        height: 50.0,
+                        width: 800,
+                        child: ElevatedButton(
                           onPressed: () {
-                            setState(() {
-                              _isVisible = !_isVisible;
-                            });
+                            if (_formKey.currentState!.validate()) {
+                              final username = _usernameController.text;
+                              final password = _passwordController.text;
+                              if (username.isNotEmpty && password.isNotEmpty) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SwiggyHomePage(),
+                                  ),
+                                );
+                              }
+
+                              // Perform authentication logic here
+                              // ...
+                            } //signup screen
                           },
-                          icon: _isVisible
-                              ? Icon(
-                                  Icons.visibility,
-                                  color: Colors.black,
-                                )
-                              : Icon(
-                                  Icons.visibility_off,
-                                  color: Colors.grey,
-                                ),
+                          child: Text(
+                            'Login',
+                            style: TextStyle(fontSize: 20, color: Colors.white),
+                          ),
                         ),
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your password.';
-                        }
-                        return null; // Validation passed
-                      },
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // ignore: sort_child_properties_last
+                        children: [
+                          Text('Does not have account?'),
+                          TextButton(
+                            child: Text(
+                              'Sign in',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignApp()),
+                              ); //signup screen
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
                     ),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  AnimatedContainer(
-                    duration: Duration(milliseconds: 500),
-                    width: 20,
-                    height: 20,
-                    decoration: BoxDecoration(
-                      color: _isPasswordEightCharacters
-                          ? Colors.green
-                          : Colors.transparent,
-                      border: _isPasswordEightCharacters
-                          ? Border.all(color: Colors.transparent)
-                          : Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.check,
-                        color: Colors.white,
-                        size: 15,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text("Contains atleast 8 characters"),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  AnimatedContainer(
-                    duration: Duration(milliseconds: 500),
-                    width: 20,
-                    height: 20,
-                    decoration: BoxDecoration(
-                      color: _hasPasswordOneNumber
-                          ? Colors.green
-                          : Colors.transparent,
-                      border: _hasPasswordOneNumber
-                          ? Border.all(color: Colors.transparent)
-                          : Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.check,
-                        color: Colors.white,
-                        size: 15,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text("Contains atleast 1 number"),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: SizedBox(
-                  height: 50.0,
-                  width: 800,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        final username = _usernameController.text;
-                        final password = _passwordController.text;
-                        if (username == 'admin' && password == 'password123') {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SwiggyHomePage(),
-                            ),
-                          );
-                        }
-
-                        // Perform authentication logic here
-                        // ...
-                      } //signup screen
-                    },
-                    child: Text(
-                      'Login',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                // ignore: sort_child_properties_last
-                children: [
-                  Text('Does not have account?'),
-                  TextButton(
-                    child: Text(
-                      'Sign in',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignApp()),
-                      ); //signup screen
-                    },
-                  ),
-                ],
               ),
             ],
           ),

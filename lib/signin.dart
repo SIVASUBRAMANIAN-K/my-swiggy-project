@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:flutter/material.dart';
+import 'package:siva/list.dart';
 import 'home.dart';
 // ignore: unused_import
 import 'profile.dart';
@@ -30,18 +31,12 @@ class SignPage extends StatefulWidget {
 }
 
 class _SignPageState extends State<SignPage> {
+  final _formKey = GlobalKey<FormState>();
   TextEditingController _usernameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-
-  void _signup() {
-    String username = _usernameController.text;
-
-    String password = _passwordController.text;
-    if (username.isEmpty || password.isEmpty) {
-      // Show an error message or perform other actions
-      return;
-    }
-  }
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _phoneNumberController = TextEditingController();
+  TextEditingController _addressController = TextEditingController();
+  TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -68,48 +63,136 @@ class _SignPageState extends State<SignPage> {
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
                 ),
-                const Image(image: AssetImage('assets/sign.jpg')),
-                const SizedBox(height: 20.0),
-                const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Name',
-                  ),
+                SizedBox(
+                  height: 10,
                 ),
-                const SizedBox(height: 20.0),
-                const TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Phone number',
-                  ),
-                ),
-                const SizedBox(height: 20.0),
-                const TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Email ',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 50),
-                  child: SizedBox(
-                    height: 50.0,
-                    width: 800,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SwiggyHomePage()),
-                        ); //signup screen
-                      },
-                      child: const Text(
-                        'Sign up',
-                        style: TextStyle(fontSize: 20, color: Colors.white),
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      txtfld(
+                        controller: _usernameController,
+                        labelText: 'Name',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your username.';
+                          }
+                          return null; // Validation passed
+                        },
+                        obscureText: false,
                       ),
-                    ),
+                      SizedBox(height: 10.0),
+                      txtfld(
+                        controller: _phoneNumberController,
+                        obscureText: false,
+                        labelText: 'Phone Number',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your phone number.';
+                          }
+                          return null; // Validation passed
+                        },
+                      ),
+                      SizedBox(height: 10.0),
+                      txtfld(
+                        controller: _emailController,
+                        obscureText: false,
+                        labelText: 'Email',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your email id.';
+                          }
+                          return null; // Validation passed
+                        },
+                      ),
+                      SizedBox(height: 10.0),
+                      txtfld(
+                        controller: _addressController,
+                        obscureText: false,
+                        labelText: 'Address',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your valid address.';
+                          }
+                          return null; // Validation passed
+                        },
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+
+                      txtfld(
+                        controller: _controller,
+                        obscureText: false,
+                        labelText: 'Date of birth',
+                        onTap: () async {
+                          DateTime? date = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(1900),
+                            lastDate: DateTime.now(),
+                          );
+                        },
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your date of birth.';
+                          }
+                          return null; // Validation passed
+                        },
+                      ),
+
+                      txtfld(
+                        controller: _controller,
+                        obscureText: false,
+                        labelText: 'Gender',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your gender.';
+                          }
+                          return null; // Validation passed
+                        },
+                      ),
+
+                      Padding(
+                        padding: const EdgeInsets.only(top: 50),
+                        child: SizedBox(
+                          height: 50.0,
+                          width: 800,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              if (_formKey.currentState!.validate()) {
+                                final username = _usernameController.text;
+                                final email = _emailController.text;
+                                final phonenumber = _phoneNumberController.text;
+                                final address = _addressController.text;
+                                if (username.isNotEmpty &&
+                                    email.isNotEmpty &&
+                                    phonenumber.isNotEmpty &&
+                                    address.isNotEmpty) {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => SwiggyHomePage(),
+                                    ),
+                                  );
+                                }
+
+                                // Perform authentication logic here
+                                // ...
+                              } //signup screen
+                            },
+                            child: const Text(
+                              'Sign up',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ),
+                      // Set the child widget within the container
+                    ],
                   ),
                 ),
-                // Set the child widget within the container
               ],
             ),
           ),
