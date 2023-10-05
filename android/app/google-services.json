@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "454441995789",
-    "project_id": "sign-in-f6aeb",
-    "storage_bucket": "sign-in-f6aeb.appspot.com"
+    "project_number": "345098843222",
+    "project_id": "login-ded62",
+    "storage_bucket": "login-ded62.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:454441995789:android:34378b141ce2e36186cf44",
+        "mobilesdk_app_id": "1:345098843222:android:e89c174be2133a72c5b7f7",
         "android_client_info": {
           "package_name": "com.example.siva"
         }
       },
       "oauth_client": [
         {
-          "client_id": "454441995789-cfj634chok7iig0f7a0lqvcclhtughtr.apps.googleusercontent.com",
+          "client_id": "345098843222-ns91ajkhn8e9b460kav8dpte36g8qnnv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.siva",
+            "certificate_hash": "02b53ebdf9626f565b75bd6d3d9c306dccf79466"
+          }
+        },
+        {
+          "client_id": "345098843222-58v274r8a2kf7cs6mak8au4qnlr3qlls.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDt38us_Zn86Ad7xxa_llrdjFSB90bCyoU"
+          "current_key": "AIzaSyCuBAohiebdrMK18aQUMeLcbqIJ6mFRj1o"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "454441995789-cfj634chok7iig0f7a0lqvcclhtughtr.apps.googleusercontent.com",
+              "client_id": "345098843222-58v274r8a2kf7cs6mak8au4qnlr3qlls.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

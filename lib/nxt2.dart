@@ -1,12 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class NewPage extends StatefulWidget {
+class NewPage2 extends StatefulWidget {
   @override
-  State<NewPage> createState() => _NewPageState();
+  State<NewPage2> createState() => _NewPage2State();
 }
 
-class _NewPageState extends State<NewPage> {
+class _NewPage2State extends State<NewPage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,9 +50,9 @@ class _NewPageState extends State<NewPage> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    top: 10, right: 80, left: 10),
+                                    top: 10, right: 60, left: 10),
                                 child: Text(
-                                  'Karunas Chettinadu\nRestaurant',
+                                  'Kwality Walls Dessert\n and Ice Cream Shop',
                                   style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold),
@@ -62,7 +62,10 @@ class _NewPageState extends State<NewPage> {
                               SizedBox(
                                 width: 10,
                               ),
-                              Icon(Icons.favorite_border),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Icon(Icons.favorite_border),
+                              ),
                             ],
                           ),
                           Padding(
@@ -71,7 +74,7 @@ class _NewPageState extends State<NewPage> {
                               children: [
                                 Icon(Icons.star_border_rounded),
                                 Text(
-                                  '4.0 (1K+ ratings) . ₹250 for two',
+                                  '4.5 (1K+ ratings) . ₹300 for two',
                                   style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
@@ -81,7 +84,7 @@ class _NewPageState extends State<NewPage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 190, top: 10),
-                            child: Text('Chinese,North Indian'),
+                            child: Text('Desserts, IceCream'),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -327,21 +330,21 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: InputChip(
-                        label: Text('Best seller'),
+                        label: Text('50% Off'),
                         onPressed: () {},
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ChoiceChip(
-                        label: Text('Veg'),
+                        label: Text('Pure Veg'),
                         selected: true,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ChoiceChip(
-                        label: Text('Non-Veg'),
+                        label: Text('Bestseller'),
                         selected: true,
                       ),
                     ),
@@ -370,7 +373,7 @@ class _NewPageState extends State<NewPage> {
                       padding: const EdgeInsets.only(right: 350),
                       child: Icon(
                         Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
+                        color: Colors.green,
                         size: 40,
                       ),
                     ),
@@ -379,7 +382,7 @@ class _NewPageState extends State<NewPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Chicken Lollipop 10\nPcs',
+                            'Hazelnut Chocolate Ice\nCream 500ml',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -408,7 +411,7 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 320),
                       child: Text(
-                        '₹260',
+                        '₹500',
                         style: TextStyle(
                           fontSize: 20,
                         ),
@@ -457,7 +460,7 @@ class _NewPageState extends State<NewPage> {
                       padding: const EdgeInsets.only(right: 350),
                       child: Icon(
                         Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
+                        color: Colors.green,
                         size: 40,
                       ),
                     ),
@@ -466,13 +469,13 @@ class _NewPageState extends State<NewPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Chicken Schezwan\nFried Rice',
+                            'Majestic Kesar Pista\nTub 500ml',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 90),
+                          padding: const EdgeInsets.only(left: 75),
                           child: SizedBox(
                             height: 50,
                             width: 100,
@@ -544,7 +547,7 @@ class _NewPageState extends State<NewPage> {
                       padding: const EdgeInsets.only(right: 350),
                       child: Icon(
                         Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
+                        color: Colors.green,
                         size: 40,
                       ),
                     ),
@@ -553,13 +556,13 @@ class _NewPageState extends State<NewPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Chicken Lollipop 10\nPcs',
+                            'Salted Caramel Brownie\nCornetto 110ml',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 80),
+                          padding: const EdgeInsets.only(left: 40),
                           child: SizedBox(
                             height: 50,
                             width: 100,
@@ -582,7 +585,7 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 320),
                       child: Text(
-                        '₹260',
+                        '₹70',
                         style: TextStyle(
                           fontSize: 20,
                         ),
@@ -610,7 +613,7 @@ class _NewPageState extends State<NewPage> {
                           ),
                           Icon(
                             Icons.star,
-                            color: Colors.grey,
+                            color: Colors.orange,
                           ),
                         ],
                       ),
@@ -631,7 +634,7 @@ class _NewPageState extends State<NewPage> {
                       padding: const EdgeInsets.only(right: 350),
                       child: Icon(
                         Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
+                        color: Colors.green,
                         size: 40,
                       ),
                     ),
@@ -640,7 +643,7 @@ class _NewPageState extends State<NewPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Chicken Kothu Paratha',
+                            'Cornetto Choco Vanilla\n[105ml X 4]',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -669,7 +672,7 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 320),
                       child: Text(
-                        '₹174',
+                        '₹120',
                         style: TextStyle(
                           fontSize: 20,
                         ),
@@ -718,7 +721,7 @@ class _NewPageState extends State<NewPage> {
                       padding: const EdgeInsets.only(right: 350),
                       child: Icon(
                         Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
+                        color: Colors.green,
                         size: 40,
                       ),
                     ),
@@ -727,7 +730,7 @@ class _NewPageState extends State<NewPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Chettinad Chicken ',
+                            'Black Forest Feast-\n[70ml X 3] ',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -756,7 +759,7 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 320),
                       child: Text(
-                        '₹204',
+                        '₹135',
                         style: TextStyle(
                           fontSize: 20,
                         ),

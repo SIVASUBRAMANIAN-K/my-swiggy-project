@@ -1,15 +1,18 @@
-// ignore: unused_import
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-// ignore: unused_import
+import 'package:siva/firebase_options.dart';
+import 'package:siva/start.dart';
 import 'login.dart';
 
-void main() {
-  runApp(const Myapp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(Myapp());
 }
 
 class Myapp extends StatefulWidget {
-  const Myapp({super.key});
+  Myapp({super.key});
 
   @override
   State<Myapp> createState() => _MyappState();
@@ -18,9 +21,18 @@ class Myapp extends StatefulWidget {
 class _MyappState extends State<Myapp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginApp(),
+      home: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return startApp();
+          } else {
+            return LoginApp();
+          }
+        },
+      ),
     );
   }
 }

@@ -1,12 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class NewPage extends StatefulWidget {
+class NewPage3 extends StatefulWidget {
   @override
-  State<NewPage> createState() => _NewPageState();
+  State<NewPage3> createState() => _NewPage3State();
 }
 
-class _NewPageState extends State<NewPage> {
+class _NewPage3State extends State<NewPage3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +52,7 @@ class _NewPageState extends State<NewPage> {
                                 padding: const EdgeInsets.only(
                                     top: 10, right: 80, left: 10),
                                 child: Text(
-                                  'Karunas Chettinadu\nRestaurant',
+                                  'Siron Juice Park',
                                   style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold),
@@ -71,7 +71,7 @@ class _NewPageState extends State<NewPage> {
                               children: [
                                 Icon(Icons.star_border_rounded),
                                 Text(
-                                  '4.0 (1K+ ratings) . ₹250 for two',
+                                  '4.2 (10K+ ratings) . ₹150 for two',
                                   style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
@@ -81,7 +81,7 @@ class _NewPageState extends State<NewPage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 190, top: 10),
-                            child: Text('Chinese,North Indian'),
+                            child: Text('Desserts, Ice Cream'),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -134,7 +134,7 @@ class _NewPageState extends State<NewPage> {
                                 child: Text('3.0 km | '),
                               ),
                               Text(
-                                '₹19',
+                                '₹14',
                                 style: TextStyle(
                                   decoration: TextDecoration.lineThrough,
                                 ),
@@ -370,7 +370,7 @@ class _NewPageState extends State<NewPage> {
                       padding: const EdgeInsets.only(right: 350),
                       child: Icon(
                         Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
+                        color: Colors.green,
                         size: 40,
                       ),
                     ),
@@ -379,94 +379,7 @@ class _NewPageState extends State<NewPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Chicken Lollipop 10\nPcs',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 50),
-                          child: SizedBox(
-                            height: 50,
-                            width: 100,
-                            child: OutlinedButton(
-                              onPressed: () {
-                                // Respond to button press
-                              },
-                              child: Text(
-                                "ADD",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.green),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 320),
-                      child: Text(
-                        '₹260',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 10),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.grey,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15, left: 15, top: 10),
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 350),
-                      child: Icon(
-                        Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
-                        size: 40,
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: Text(
-                            'Chicken Schezwan\nFried Rice',
+                            'Corn Samosa 1 Set\n(2Pcs)',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -495,94 +408,7 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 320),
                       child: Text(
-                        '₹204',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 10),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.grey,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.grey,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15, left: 15, top: 10),
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 350),
-                      child: Icon(
-                        Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
-                        size: 40,
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: Text(
-                            'Chicken Lollipop 10\nPcs',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 80),
-                          child: SizedBox(
-                            height: 50,
-                            width: 100,
-                            child: OutlinedButton(
-                              onPressed: () {
-                                // Respond to button press
-                              },
-                              child: Text(
-                                "ADD",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.green),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 320),
-                      child: Text(
-                        '₹260',
+                        '₹55',
                         style: TextStyle(
                           fontSize: 20,
                         ),
@@ -640,13 +466,13 @@ class _NewPageState extends State<NewPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Chicken Kothu Paratha',
+                            'Chicken 65',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 50),
+                          padding: const EdgeInsets.only(left: 160),
                           child: SizedBox(
                             height: 50,
                             width: 100,
@@ -669,7 +495,7 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 320),
                       child: Text(
-                        '₹174',
+                        '₹125',
                         style: TextStyle(
                           fontSize: 20,
                         ),
@@ -718,7 +544,7 @@ class _NewPageState extends State<NewPage> {
                       padding: const EdgeInsets.only(right: 350),
                       child: Icon(
                         Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
+                        color: Colors.green,
                         size: 40,
                       ),
                     ),
@@ -727,13 +553,13 @@ class _NewPageState extends State<NewPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Chettinad Chicken ',
+                            'Badam Shake',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 80),
+                          padding: const EdgeInsets.only(left: 140),
                           child: SizedBox(
                             height: 50,
                             width: 100,
@@ -756,7 +582,181 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 320),
                       child: Text(
-                        '₹204',
+                        '₹109',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 10),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 15, left: 15, top: 10),
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 350),
+                      child: Icon(
+                        Icons.arrow_drop_up_outlined,
+                        color: Colors.red,
+                        size: 40,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Text(
+                            'Chicken Popcorn',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 110),
+                          child: SizedBox(
+                            height: 50,
+                            width: 100,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                // Respond to button press
+                              },
+                              child: Text(
+                                "ADD",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 320),
+                      child: Text(
+                        '₹140',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 10),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 15, left: 15, top: 10),
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 350),
+                      child: Icon(
+                        Icons.arrow_drop_up_outlined,
+                        color: Colors.green,
+                        size: 40,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Text(
+                            'Jigarthanda ',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 150),
+                          child: SizedBox(
+                            height: 50,
+                            width: 100,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                // Respond to button press
+                              },
+                              child: Text(
+                                "ADD",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 320),
+                      child: Text(
+                        '₹93',
                         style: TextStyle(
                           fontSize: 20,
                         ),

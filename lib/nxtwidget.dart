@@ -1,12 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class NewPage extends StatefulWidget {
+class NewPage1 extends StatefulWidget {
   @override
-  State<NewPage> createState() => _NewPageState();
+  State<NewPage1> createState() => _NewPage1State();
 }
 
-class _NewPageState extends State<NewPage> {
+class _NewPage1State extends State<NewPage1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,19 +50,26 @@ class _NewPageState extends State<NewPage> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    top: 10, right: 80, left: 10),
+                                    top: 20, right: 80, left: 10),
                                 child: Text(
-                                  'Karunas Chettinadu\nRestaurant',
+                                  'OYALO Pizza',
                                   style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
-                              Icon(Icons.share),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 20, left: 50),
+                                child: Icon(Icons.share),
+                              ),
                               SizedBox(
                                 width: 10,
                               ),
-                              Icon(Icons.favorite_border),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 20),
+                                child: Icon(Icons.favorite_border),
+                              ),
                             ],
                           ),
                           Padding(
@@ -71,7 +78,7 @@ class _NewPageState extends State<NewPage> {
                               children: [
                                 Icon(Icons.star_border_rounded),
                                 Text(
-                                  '4.0 (1K+ ratings) . ₹250 for two',
+                                  '4.4 (50+ ratings) . ₹350 for two',
                                   style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
@@ -81,7 +88,7 @@ class _NewPageState extends State<NewPage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 190, top: 10),
-                            child: Text('Chinese,North Indian'),
+                            child: Text('Pizzas'),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -327,7 +334,7 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: InputChip(
-                        label: Text('Best seller'),
+                        label: Text('Buy 1 Get 1'),
                         onPressed: () {},
                       ),
                     ),
@@ -352,13 +359,290 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'Recommended (6)',
+                        'Combo Offer (3)',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 170),
+                      child: Icon(Icons.arrow_drop_up_outlined),
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 350),
+                      child: Icon(
+                        Icons.arrow_drop_up_outlined,
+                        color: Colors.green,
+                        size: 40,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Text(
+                            'Whistle Podu - Veg 6 @\nRs.279',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 50),
+                          child: SizedBox(
+                            height: 50,
+                            width: 100,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                // Respond to button press
+                              },
+                              child: Text(
+                                "ADD",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 320),
+                      child: Text(
+                        '₹0.01',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 10),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.grey,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 15, left: 15, top: 10),
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 350),
+                      child: Icon(
+                        Icons.arrow_drop_up_outlined,
+                        color: Colors.red,
+                        size: 40,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Text(
+                            'Whistle Podu - Non Veg\n6@ Rs.349',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 50),
+                          child: SizedBox(
+                            height: 50,
+                            width: 100,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                // Respond to button press
+                              },
+                              child: Text(
+                                "ADD",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 320),
+                      child: Text(
+                        '₹0.01',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 10),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 15, left: 15, top: 10),
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 350),
+                      child: Icon(
+                        Icons.arrow_drop_up_outlined,
+                        color: Colors.green,
+                        size: 40,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Text(
+                            'Kings Fest - Veg @\nRs.629',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 80),
+                          child: SizedBox(
+                            height: 50,
+                            width: 100,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                // Respond to button press
+                              },
+                              child: Text(
+                                "ADD",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 320),
+                      child: Text(
+                        '₹0.01',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 10),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.orange,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 15, left: 15, top: 10),
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Personalised Pizza (2)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 130),
                       child: Icon(Icons.arrow_drop_up_outlined),
                     ),
                   ],
@@ -379,7 +663,7 @@ class _NewPageState extends State<NewPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Chicken Lollipop 10\nPcs',
+                            'Chicken Farfalle Pasta',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -408,94 +692,7 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 320),
                       child: Text(
-                        '₹260',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 10),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.grey,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15, left: 15, top: 10),
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 350),
-                      child: Icon(
-                        Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
-                        size: 40,
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: Text(
-                            'Chicken Schezwan\nFried Rice',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 90),
-                          child: SizedBox(
-                            height: 50,
-                            width: 100,
-                            child: OutlinedButton(
-                              onPressed: () {
-                                // Respond to button press
-                              },
-                              child: Text(
-                                "ADD",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.green),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 320),
-                      child: Text(
-                        '₹204',
+                        '₹125',
                         style: TextStyle(
                           fontSize: 20,
                         ),
@@ -544,7 +741,7 @@ class _NewPageState extends State<NewPage> {
                       padding: const EdgeInsets.only(right: 350),
                       child: Icon(
                         Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
+                        color: Colors.green,
                         size: 40,
                       ),
                     ),
@@ -553,7 +750,7 @@ class _NewPageState extends State<NewPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Chicken Lollipop 10\nPcs',
+                            'Cheesy Garlic Bread',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -582,7 +779,7 @@ class _NewPageState extends State<NewPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 320),
                       child: Text(
-                        '₹260',
+                        '₹169',
                         style: TextStyle(
                           fontSize: 20,
                         ),
@@ -610,181 +807,7 @@ class _NewPageState extends State<NewPage> {
                           ),
                           Icon(
                             Icons.star,
-                            color: Colors.grey,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15, left: 15, top: 10),
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 350),
-                      child: Icon(
-                        Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
-                        size: 40,
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: Text(
-                            'Chicken Kothu Paratha',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 50),
-                          child: SizedBox(
-                            height: 50,
-                            width: 100,
-                            child: OutlinedButton(
-                              onPressed: () {
-                                // Respond to button press
-                              },
-                              child: Text(
-                                "ADD",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.green),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 320),
-                      child: Text(
-                        '₹174',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 10),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.star,
                             color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.grey,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15, left: 15, top: 10),
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 350),
-                      child: Icon(
-                        Icons.arrow_drop_up_outlined,
-                        color: Colors.red,
-                        size: 40,
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: Text(
-                            'Chettinad Chicken ',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 80),
-                          child: SizedBox(
-                            height: 50,
-                            width: 100,
-                            child: OutlinedButton(
-                              onPressed: () {
-                                // Respond to button press
-                              },
-                              child: Text(
-                                "ADD",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.green),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 320),
-                      child: Text(
-                        '₹204',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 10),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.grey,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.grey,
                           ),
                         ],
                       ),

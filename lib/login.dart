@@ -1,8 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:siva/phone.dart';
+import 'forgetpass.dart';
+import 'widgetbutton.dart';
 import 'package:siva/signin.dart';
-// ignore: unused_import
-import 'home.dart';
 import 'list.dart';
 
 class LoginApp extends StatelessWidget {
@@ -14,7 +15,7 @@ class LoginApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.orange),
       title: 'Login Page',
-      home: const LoginPage(),
+      home: LoginPage(),
     );
   }
 }
@@ -23,13 +24,12 @@ class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  final _usernameController = TextEditingController();
+  final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
   @override
@@ -55,19 +55,20 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: const EdgeInsets.only(top: 40),
                       child: txtfld(
-                        controller: _usernameController,
+                        controller: _emailController,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your username.';
+                            return 'Please enter your email.';
                           }
                           return null; // Validation passed
                         },
-                        labelText: 'Username',
+                        labelText: 'Email',
                         obscureText: false,
+                        width: null,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20),
+                      padding: EdgeInsets.only(top: 20),
                       child: txtfld(
                         controller: _passwordController,
                         validator: (value) {
@@ -78,36 +79,45 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         labelText: 'Password',
                         obscureText: true,
+                        width: null,
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 50),
-                      child: SizedBox(
-                        height: 50.0,
-                        width: 800,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              final username = _usernameController.text;
-                              final password = _passwordController.text;
-                              if (username.isNotEmpty && password.isNotEmpty) {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => SwiggyHomePage(),
-                                  ),
-                                );
-                              }
+                      padding: const EdgeInsets.only(left: 210),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ForgotPasswordPage()),
+                          );
+                        },
+                        child: Text("Forget Password?"),
+                      ),
+                    ),
+                    button(
+                      onPressed: () async {
+                        try {
+                          UserCredential userCredential = await FirebaseAuth
+                              .instance
+                              .signInWithEmailAndPassword(
+                            email: _emailController.text,
+                            password: _passwordController.text,
+                          );
 
-                              // Perform authentication logic here
-                              // ...
-                            } //signup screen
-                          },
-                          child: Text(
-                            'Login',
-                            style: TextStyle(fontSize: 20, color: Colors.white),
-                          ),
-                        ),
+                          User? user = userCredential.user;
+                          print('Signed in: ${user!.uid}');
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => phone()));
+                        } catch (e) {
+                          print('Sign-in error: $e');
+                        }
+
+                        //signup screen
+                      },
+                      child: Text(
+                        'Login',
+                        style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ),
                     Padding(
@@ -119,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                           Text('Does not have account?'),
                           TextButton(
                             child: Text(
-                              'Sign in',
+                              'Sign Up!',
                               style: TextStyle(fontSize: 20),
                             ),
                             onPressed: () {

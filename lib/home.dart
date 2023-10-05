@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:carousel_slider/carousel_slider.dart';
 
+import 'nxt2.dart';
+import 'nxt3.dart';
+import 'nxt4.dart';
+import 'nxtwidget.dart';
 import 'profile.dart';
 import 'nxt.dart';
 
@@ -404,509 +408,545 @@ class _SwiggyHomePageState extends State<SwiggyHomePage> {
                 );
               },
             ),
-            Container(
-              height: 180,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Image.asset(
-                      'assets/oya.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 90),
-                    child: Icon(
-                      Icons.favorite_border_outlined,
-                      size: 25.0,
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Text(
-                                '  OYALO Pizza',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                              PopupMenuButton<int>(
-                                itemBuilder: (context) => [
-                                  PopupMenuItem<int>(
-                                    value: 1,
-                                    child: Text('hiiii'),
-                                  ),
-                                  PopupMenuItem<int>(
-                                    value: 2,
-                                    child: Text('Menu Item 2'),
-                                  ),
-                                  PopupMenuItem<int>(
-                                    value: 3,
-                                    child: Text('Menu Item 3'),
-                                  ),
-                                ],
-                                onSelected: (value) {},
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 50),
-                                  child: IconButton(
-                                    icon: Icon(Icons.more_vert),
-                                    onPressed: () {},
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+            GestureDetector(
+              child: Container(
+                height: 180,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Image.asset(
+                        'assets/oya.jpg',
+                        fit: BoxFit.cover,
                       ),
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 70),
-                                child: Icon(
-                                  Icons.star_border_outlined,
-                                  color: Colors.green,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 90),
+                      child: Icon(
+                        Icons.favorite_border_outlined,
+                        size: 25.0,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Text(
+                                  '  OYALO Pizza',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(bottom: 0, right: 70),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      '4.4 (50+) . 20 mins',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
+                                PopupMenuButton<int>(
+                                  itemBuilder: (context) => [
+                                    PopupMenuItem<int>(
+                                      value: 1,
+                                      child: Text('hiiii'),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 10),
-                                      child: Text(
-                                        'Pizzas...   \nMeenakshipuram 0.5 km',
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                        ),
-                                      ),
+                                    PopupMenuItem<int>(
+                                      value: 2,
+                                      child: Text('Menu Item 2'),
+                                    ),
+                                    PopupMenuItem<int>(
+                                      value: 3,
+                                      child: Text('Menu Item 3'),
                                     ),
                                   ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 80),
-                                child: OutlinedButton.icon(
-                                  onPressed: () {
-                                    // Respond to button press
-                                  },
-                                  icon: Icon(
-                                    Icons.directions_bike_sharp,
-                                    size: 18,
-                                    color: Color.fromARGB(255, 175, 3, 244),
-                                  ),
-                                  label: Text(
-                                    "FREE DELIVERY",
-                                    style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 175, 3, 244)),
+                                  onSelected: (value) {},
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 50),
+                                    child: IconButton(
+                                      icon: Icon(Icons.more_vert),
+                                      onPressed: () {},
+                                    ),
                                   ),
                                 ),
-                              )
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 70),
+                                  child: Icon(
+                                    Icons.star_border_outlined,
+                                    color: Colors.green,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 0, right: 70),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        '4.4 (50+) . 20 mins',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Text(
+                                          'Pizzas...   \nMeenakshipuram 0.5 km',
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 80),
+                                  child: OutlinedButton.icon(
+                                    onPressed: () {
+                                      // Respond to button press
+                                    },
+                                    icon: Icon(
+                                      Icons.directions_bike_sharp,
+                                      size: 18,
+                                      color: Color.fromARGB(255, 175, 3, 244),
+                                    ),
+                                    label: Text(
+                                      "FREE DELIVERY",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 175, 3, 244)),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NewPage1()),
+                );
+              },
             ),
-            Container(
-              height: 180,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Image.asset(
-                      'assets/kwa.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 90),
-                    child: Icon(
-                      Icons.favorite_border_outlined,
-                      size: 25.0,
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Text(
-                                '  Kwality Walls',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                              PopupMenuButton<int>(
-                                itemBuilder: (context) => [
-                                  PopupMenuItem<int>(
-                                    value: 1,
-                                    child: Text('hiiii'),
-                                  ),
-                                  PopupMenuItem<int>(
-                                    value: 2,
-                                    child: Text('Menu Item 2'),
-                                  ),
-                                  PopupMenuItem<int>(
-                                    value: 3,
-                                    child: Text('Menu Item 3'),
-                                  ),
-                                ],
-                                onSelected: (value) {},
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 50),
-                                  child: IconButton(
-                                    icon: Icon(Icons.more_vert),
-                                    onPressed: () {},
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+            GestureDetector(
+              child: Container(
+                height: 180,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Image.asset(
+                        'assets/kwa.jpg',
+                        fit: BoxFit.cover,
                       ),
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 70),
-                                child: Icon(
-                                  Icons.star_border_outlined,
-                                  color: Colors.green,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 90),
+                      child: Icon(
+                        Icons.favorite_border_outlined,
+                        size: 25.0,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Text(
+                                  '  Kwality Walls',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(bottom: 0, right: 70),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      '4.5 (1K+) . 16 mins',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
+                                PopupMenuButton<int>(
+                                  itemBuilder: (context) => [
+                                    PopupMenuItem<int>(
+                                      value: 1,
+                                      child: Text('hiiii'),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 10),
-                                      child: Text(
-                                        'Desserts,Ice Cream,Ice Cre..   \nMeenakshipuram 2.2 km',
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                        ),
-                                      ),
+                                    PopupMenuItem<int>(
+                                      value: 2,
+                                      child: Text('Menu Item 2'),
+                                    ),
+                                    PopupMenuItem<int>(
+                                      value: 3,
+                                      child: Text('Menu Item 3'),
                                     ),
                                   ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 80),
-                                child: OutlinedButton.icon(
-                                  onPressed: () {
-                                    // Respond to button press
-                                  },
-                                  icon: Icon(
-                                    Icons.directions_bike_sharp,
-                                    size: 18,
-                                    color: Color.fromARGB(255, 175, 3, 244),
-                                  ),
-                                  label: Text(
-                                    "FREE DELIVERY",
-                                    style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 175, 3, 244)),
+                                  onSelected: (value) {},
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 50),
+                                    child: IconButton(
+                                      icon: Icon(Icons.more_vert),
+                                      onPressed: () {},
+                                    ),
                                   ),
                                 ),
-                              )
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 70),
+                                  child: Icon(
+                                    Icons.star_border_outlined,
+                                    color: Colors.green,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 0, right: 70),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        '4.5 (1K+) . 16 mins',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Text(
+                                          'Desserts,Ice Cream,Ice Cre..   \nMeenakshipuram 2.2 km',
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 80),
+                                  child: OutlinedButton.icon(
+                                    onPressed: () {
+                                      // Respond to button press
+                                    },
+                                    icon: Icon(
+                                      Icons.directions_bike_sharp,
+                                      size: 18,
+                                      color: Color.fromARGB(255, 175, 3, 244),
+                                    ),
+                                    label: Text(
+                                      "FREE DELIVERY",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 175, 3, 244)),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NewPage2()),
+                );
+              },
             ),
-            Container(
-              height: 180,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Image.asset(
-                      'assets/siron.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 90),
-                    child: Icon(
-                      Icons.favorite_border_outlined,
-                      size: 25.0,
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Text(
-                                '  Siron Juice Park',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                              PopupMenuButton<int>(
-                                itemBuilder: (context) => [
-                                  PopupMenuItem<int>(
-                                    value: 1,
-                                    child: Text('hiiii'),
-                                  ),
-                                  PopupMenuItem<int>(
-                                    value: 2,
-                                    child: Text('Menu Item 2'),
-                                  ),
-                                  PopupMenuItem<int>(
-                                    value: 3,
-                                    child: Text('Menu Item 3'),
-                                  ),
-                                ],
-                                onSelected: (value) {},
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 50),
-                                  child: IconButton(
-                                    icon: Icon(Icons.more_vert),
-                                    onPressed: () {},
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+            GestureDetector(
+              child: Container(
+                height: 180,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Image.asset(
+                        'assets/siron.jpg',
+                        fit: BoxFit.cover,
                       ),
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 70),
-                                child: Icon(
-                                  Icons.star_border_outlined,
-                                  color: Colors.green,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 90),
+                      child: Icon(
+                        Icons.favorite_border_outlined,
+                        size: 25.0,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Text(
+                                  '  Siron Juice Park',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(bottom: 0, right: 70),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      '4.2 (10K+) . 19 mins',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
+                                PopupMenuButton<int>(
+                                  itemBuilder: (context) => [
+                                    PopupMenuItem<int>(
+                                      value: 1,
+                                      child: Text('hiiii'),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 10),
-                                      child: Text(
-                                        'Desserts,Ice Cream,Pizzas   \nMeenakshipuram 3.0 km',
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                        ),
-                                      ),
+                                    PopupMenuItem<int>(
+                                      value: 2,
+                                      child: Text('Menu Item 2'),
+                                    ),
+                                    PopupMenuItem<int>(
+                                      value: 3,
+                                      child: Text('Menu Item 3'),
                                     ),
                                   ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 80),
-                                child: OutlinedButton.icon(
-                                  onPressed: () {
-                                    // Respond to button press
-                                  },
-                                  icon: Icon(
-                                    Icons.directions_bike_sharp,
-                                    size: 18,
-                                    color: Color.fromARGB(255, 175, 3, 244),
-                                  ),
-                                  label: Text(
-                                    "FREE DELIVERY",
-                                    style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 175, 3, 244)),
+                                  onSelected: (value) {},
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 50),
+                                    child: IconButton(
+                                      icon: Icon(Icons.more_vert),
+                                      onPressed: () {},
+                                    ),
                                   ),
                                 ),
-                              )
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 70),
+                                  child: Icon(
+                                    Icons.star_border_outlined,
+                                    color: Colors.green,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 0, right: 70),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        '4.2 (10K+) . 19 mins',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Text(
+                                          'Desserts,Ice Cream,Pizzas   \nMeenakshipuram 3.0 km',
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 80),
+                                  child: OutlinedButton.icon(
+                                    onPressed: () {
+                                      // Respond to button press
+                                    },
+                                    icon: Icon(
+                                      Icons.directions_bike_sharp,
+                                      size: 18,
+                                      color: Color.fromARGB(255, 175, 3, 244),
+                                    ),
+                                    label: Text(
+                                      "FREE DELIVERY",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 175, 3, 244)),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NewPage3()),
+                );
+              },
             ),
-            Container(
-              height: 180,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Image.asset(
-                      'assets/kfc.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 90),
-                    child: Icon(
-                      Icons.favorite_border_outlined,
-                      size: 25.0,
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Text(
-                                '  KFC',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                              PopupMenuButton<int>(
-                                itemBuilder: (context) => [
-                                  PopupMenuItem<int>(
-                                    value: 1,
-                                    child: Text('hiiii'),
-                                  ),
-                                  PopupMenuItem<int>(
-                                    value: 2,
-                                    child: Text('Menu Item 2'),
-                                  ),
-                                  PopupMenuItem<int>(
-                                    value: 3,
-                                    child: Text('Menu Item 3'),
-                                  ),
-                                ],
-                                onSelected: (value) {},
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 50),
-                                  child: IconButton(
-                                    icon: Icon(Icons.more_vert),
-                                    onPressed: () {},
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+            GestureDetector(
+              child: Container(
+                height: 180,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Image.asset(
+                        'assets/kfc.jpg',
+                        fit: BoxFit.cover,
                       ),
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 70),
-                                child: Icon(
-                                  Icons.star_border_outlined,
-                                  color: Colors.green,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 90),
+                      child: Icon(
+                        Icons.favorite_border_outlined,
+                        size: 25.0,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Text(
+                                  '  KFC',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(bottom: 0, right: 70),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      '4.2 (5K+) . 21 mins',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
+                                PopupMenuButton<int>(
+                                  itemBuilder: (context) => [
+                                    PopupMenuItem<int>(
+                                      value: 1,
+                                      child: Text('hiiii'),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 10),
-                                      child: Text(
-                                        'Burgers,Biriyani,american,S.   \nMeenakshipuram 3.0 km',
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                        ),
-                                      ),
+                                    PopupMenuItem<int>(
+                                      value: 2,
+                                      child: Text('Menu Item 2'),
+                                    ),
+                                    PopupMenuItem<int>(
+                                      value: 3,
+                                      child: Text('Menu Item 3'),
                                     ),
                                   ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 80),
-                                child: OutlinedButton.icon(
-                                  onPressed: () {
-                                    // Respond to button press
-                                  },
-                                  icon: Icon(
-                                    Icons.directions_bike_sharp,
-                                    size: 18,
-                                    color: Color.fromARGB(255, 175, 3, 244),
-                                  ),
-                                  label: Text(
-                                    "FREE DELIVERY",
-                                    style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 175, 3, 244)),
+                                  onSelected: (value) {},
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 50),
+                                    child: IconButton(
+                                      icon: Icon(Icons.more_vert),
+                                      onPressed: () {},
+                                    ),
                                   ),
                                 ),
-                              )
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 70),
+                                  child: Icon(
+                                    Icons.star_border_outlined,
+                                    color: Colors.green,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 0, right: 70),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        '4.2 (5K+) . 21 mins',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Text(
+                                          'Burgers,Biriyani,american,S.   \nMeenakshipuram 3.0 km',
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 80),
+                                  child: OutlinedButton.icon(
+                                    onPressed: () {
+                                      // Respond to button press
+                                    },
+                                    icon: Icon(
+                                      Icons.directions_bike_sharp,
+                                      size: 18,
+                                      color: Color.fromARGB(255, 175, 3, 244),
+                                    ),
+                                    label: Text(
+                                      "FREE DELIVERY",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 175, 3, 244)),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NewPage4()),
+                );
+              },
             ),
           ],
         ),

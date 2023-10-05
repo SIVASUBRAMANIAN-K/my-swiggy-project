@@ -1,8 +1,6 @@
 // ignore: unused_import
 import 'package:flutter/material.dart';
 import 'package:siva/home.dart';
-
-// ignore: unused_import
 import 'login.dart';
 
 class ProfileApp extends StatelessWidget {
@@ -18,9 +16,14 @@ class ProfileApp extends StatelessWidget {
   }
 }
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -364,18 +367,33 @@ class ProfilePage extends StatelessWidget {
                   thickness: 30,
                 ),
               ),
-              const Row(
+              Row(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
-                    child: Text(
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                        'LOGOUT OPTIONS'),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 190),
-                    child: Icon(Icons.arrow_right),
+                  GestureDetector(
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding:
+                              EdgeInsets.only(left: 20, top: 20, bottom: 20),
+                          child: Text(
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                              'LOGOUT OPTIONS'),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 190),
+                          child: Icon(Icons.arrow_right),
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginApp(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
