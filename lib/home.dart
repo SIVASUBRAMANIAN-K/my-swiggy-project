@@ -350,7 +350,7 @@ class _SwiggyHomePageState extends State<SwiggyHomePage> {
                                       Text(
                                         '4.0 (1K+) . 18 mins',
                                         style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Padding(
@@ -485,7 +485,7 @@ class _SwiggyHomePageState extends State<SwiggyHomePage> {
                                       Text(
                                         '4.4 (50+) . 20 mins',
                                         style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Padding(
@@ -620,7 +620,7 @@ class _SwiggyHomePageState extends State<SwiggyHomePage> {
                                       Text(
                                         '4.5 (1K+) . 16 mins',
                                         style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Padding(
@@ -755,7 +755,7 @@ class _SwiggyHomePageState extends State<SwiggyHomePage> {
                                       Text(
                                         '4.2 (10K+) . 19 mins',
                                         style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Padding(
@@ -890,7 +890,7 @@ class _SwiggyHomePageState extends State<SwiggyHomePage> {
                                       Text(
                                         '4.2 (5K+) . 21 mins',
                                         style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Padding(

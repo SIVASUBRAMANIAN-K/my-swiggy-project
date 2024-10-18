@@ -15,9 +15,11 @@ class otp extends StatefulWidget {
 
 class _otpState extends State<otp> {
   bool _isResendAgain = false;
+  // ignore: unused_field
   bool _ispinput = false;
   String _code = '';
 
+  // ignore: unused_field
   late Timer _timer;
   int _start = 60;
 

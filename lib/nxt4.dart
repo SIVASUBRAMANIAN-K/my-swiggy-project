@@ -229,7 +229,7 @@ class _NewPage4State extends State<NewPage4> {
                                 ),
                                 Text(
                                   '  USE SWIGGYWEEKENDS | ABOVE ₹249',
-                                  style: TextStyle(fontSize: 13),
+                                  style: TextStyle(fontSize: 11),
                                 ),
                               ],
                             ),
@@ -332,28 +332,28 @@ class _NewPage4State extends State<NewPage4> {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(2.0),
                       child: InputChip(
                         label: Text('Best seller'),
                         onPressed: () {},
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(2.0),
                       child: InputChip(
                         label: Text('20% Off'),
                         onPressed: () {},
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(2.0),
                       child: ChoiceChip(
                         label: Text('Veg'),
                         selected: true,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(2.0),
                       child: ChoiceChip(
                         label: Text('Non-Veg'),
                         selected: true,

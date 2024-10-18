@@ -124,7 +124,7 @@ class _NewPageState extends State<NewPage> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(3.0),
                             child: Divider(),
                           ),
                           Row(

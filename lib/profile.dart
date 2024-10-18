@@ -86,7 +86,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   const Padding(
                     padding: EdgeInsets.only(left: 10, bottom: 10),
                     child: Text(
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(fontSize: 11),
                         'Favourites, Hidden restaurants\n & Settings'),
                   ),
                   Padding(
@@ -264,7 +264,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   Padding(
                     padding: EdgeInsets.only(left: 10, bottom: 10),
                     child: Text(
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(fontSize: 11),
                         'Refer friends and earn cashback'),
                   ),
                   Padding(
@@ -328,7 +328,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   Padding(
                     padding: EdgeInsets.only(left: 10, bottom: 10),
                     child: Text(
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(fontSize: 11),
                         'Avail corporate or third-party discounts on Swiggy One\n membership'),
                   ),
                   Padding(

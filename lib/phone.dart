@@ -140,7 +140,7 @@ class _phoneState extends State<phone> {
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 20),
+                        padding: const EdgeInsets.only(left: 10),
                         child: Text('By clicking, I accept the'),
                       ),
                       TextButton(

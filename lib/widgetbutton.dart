@@ -25,6 +25,9 @@ class _buttonState extends State<button> {
         child: ElevatedButton(
           onPressed: widget.onPressed,
           child: widget.child,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.orange, // Change the button color here
+          ),
         ),
       ),
     );

@@ -222,7 +222,7 @@ class _NewPage3State extends State<NewPage3> {
                                 ),
                                 Text(
                                   '  USE SWIGGYWEEKENDS | ABOVE ₹249',
-                                  style: TextStyle(fontSize: 13),
+                                  style: TextStyle(fontSize: 11),
                                 ),
                               ],
                             ),
